@@ -24,7 +24,7 @@ export default function Section({ formData }) {
       "rgba(56, 173, 169,1.0)",
       "rgba(7, 153, 146,1.0)",
     ],
-    leves: ["Novice", "Beginner", "Skillful", "Experienced", "Expert"],
+    levels: ["Novice", "Beginner", "Skillful", "Experienced", "Expert"],
   };
   const handleChange = (event, e, key) => {
     dispatch(
@@ -41,7 +41,7 @@ export default function Section({ formData }) {
       dispatch(
         formData.redux.actions.modify({
           id: sliderData.id,
-          update: { level: colors.leves[sliderData.index] },
+          update: { level: colors.levels[sliderData.index] },
         })
       );
     }
@@ -59,7 +59,7 @@ export default function Section({ formData }) {
               {formData.inputs.map((ele, index) => {
                 let sliderIndex = 0;
                 if(e.level) {
-                  sliderIndex = colors.leves.findIndex(level => level == e.level)
+                  sliderIndex = colors.levels.findIndex(level => level == e.level)
                 }
                 const options = {
                   colors,
