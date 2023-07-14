@@ -1,8 +1,11 @@
 .showChild{
-    height: 100%;
+    height: auto;
+    transition: 1s;
+    overflow: hidden;
 }
 .hideChild{
     height: 0;
+    transition: 1s;
     overflow: hidden;
 }
 
@@ -11,6 +14,6 @@
     background-color: #0abde3;
     border-radius: 5px;
     padding: 0.5rem ;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
 }

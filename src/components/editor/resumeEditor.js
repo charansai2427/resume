@@ -10,16 +10,14 @@ import {
   remove as employmentRemove,
 } from "../../redux/slices/employmentSlice";
 import {
-  add as websitesSocialSitesAdd,
-  modify as websitesSocialSitesModify,
-  remove as websitesSocialSitesRemove
-} from "../../redux/slices/websiteSocialSitesSlice"
+  add as skillsAdd,
+  modify as skillsModify,
+  remove as skillsRemove,
+} from "../../redux/slices/skillsSlice";
 import Header from "./header";
 import PersonalDetails from "./personalDetails";
 import Section from "./section";
 import Summary from "./summary";
-import Accordian from "../utils/accordion";
-import redux from "../../redux";
 const ResumeEditor = () => {
     // const educationState = useSelector(state => state.Education.value);
     // const employmentState = useSelector(state => state.Employment.value);
@@ -28,31 +26,37 @@ const ResumeEditor = () => {
       {
         label: "Job Title",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
         label: "Employer",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
         label: "Start",
         col: 3,
+        element:"input",
         type: "date",
       },
       {
         label: "End",
         col: 3,
+        element:"input",
         type: "date",
       },
       {
         label: "City",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
         label: "Description",
         col: 12,
+        element:"input",
         type: "textarea",
       },
     ],
@@ -72,31 +76,37 @@ const ResumeEditor = () => {
       {
         label: "School",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
         label: "Degree",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
         label: "Start",
         col: 3,
+        element:"input",
         type: "date",
       },
       {
         label: "End",
         col: 3,
+        element:"input",
         type: "date",
       },
       {
         label: "City",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
         label: "Description",
         col: 12,
+        element:"input",
         type: "textarea",
       },
     ],
@@ -111,31 +121,30 @@ const ResumeEditor = () => {
       state: "Education"
     },
   };
-  console.log("rerender1");
-  const socialAndWebsites = {
+  const skills = {
+    title: "Skills",
+    desc: "Choose 5 important skills that show you fit the position. Make sure they match the key skills mentioned in the job listing (especially when applying via an online system).",
     inputs: [
       {
-        label: "label1",
+        label: "Skill",
         col: 6,
+        element:"input",
         type: "text",
       },
       {
-        label: "link",
+        label: "Level",
         col: 6,
-        type: "text",
+        element:"slider",
       },
     ],
-    title : "Websites & Social Links",
-    desc : "You can add links to websites you want hiring managers to see! Perhaps It will be  a link to your portfolio, LinkedIn profile, or personal website",
     redux : {
-      actions:{
-        add : websitesSocialSitesAdd,
-        modify : websitesSocialSitesModify,
-        remove : websitesSocialSitesRemove
-      } ,
-      state: "WebsiteAndSocialSites"
+      actions: {
+        add: skillsAdd,
+        modify: skillsModify,
+        remove: skillsRemove
+      },
+      state: "Skill"
     }
-   
   }
   return (
     <div>
@@ -145,7 +154,7 @@ const ResumeEditor = () => {
 
       <Section formData={education} />
       <Section formData={employment} />
-      <Section formData={socialAndWebsites}/>
+      <Section formData={skills} />
     </div>
   );
 };
