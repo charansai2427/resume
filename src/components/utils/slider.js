@@ -1,7 +1,9 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import "./slider.scss";
 export default function Slider({ data }) {
+const {dispatch } = useState()
+const {modify} = useState(); 
   return (
     <div
       className="slider-parent"
@@ -17,7 +19,9 @@ export default function Slider({ data }) {
             backgroundColor: data.colors.moveBg[i],
           }}
           key={i}
-          onClick={(e) => data.setIndex({ index: i, id: data.id })}
+
+          onClick={() => dispatch(modify({id:data.id , update:{level:data.colors.levels[i]}}))}
+          // onClick={(e) => data.setIndex({ index: i, id: data.id })}
         ></div>
       ))}
       <div
