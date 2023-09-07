@@ -38,6 +38,7 @@ export default function Section({ formData }) {
   };
   useEffect(() => {
     if (formData.redux.state == "Skill") {
+      console.log(formData);
       dispatch(
         formData.redux.actions.modify({
           id: sliderData.id,

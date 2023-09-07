@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { modify } from "../../redux/slices/skillsSlice";
 import "./slider.scss";
 export default function Slider({ data }) {
-const {dispatch } = useState()
-const {modify} = useState(); 
+const dispatch  = useDispatch();
+// const {modify} = useState(); 
   return (
     <div
       className="slider-parent"

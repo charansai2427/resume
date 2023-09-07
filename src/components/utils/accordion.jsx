@@ -36,3 +36,6 @@ const Accordian = ({ children, title }) => {
 };
 
 export default Accordian;
+
+
+
